@@ -7,7 +7,7 @@ def mask_account_card(input_string: str) -> str:
     Возвращает строку с замаскированным номером.
     """
     # Разделяем строку на части
-    parts = input_string.rsplit(' ', 1)
+    parts = input_string.rsplit(" ", 1)
 
     if len(parts) != 2:
         return input_string
@@ -28,10 +28,10 @@ def get_date(date_string: str) -> str:
     Возвращает строку с датой в формате "ДД.ММ.ГГГГ"
     """
     # Извлекаем часть с датой (до буквы T)
-    date_part = date_string.split('T')[0]
+    date_part = date_string.split("T")[0]
 
     # Разделяем на год, месяц, день
-    year, month, day = date_part.split('-')
+    year, month, day = date_part.split("-")
 
     # Возвращаем в формате ДД.ММ.ГГГГ
     return f"{day}.{month}.{year}"
