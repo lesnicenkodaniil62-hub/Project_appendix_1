@@ -1,4 +1,4 @@
-def filter_by_state(filter_state: list, state: str = "EXECUTED") -> list:
+def filter_by_state(transaction_1: list, state: str = "EXECUTED") -> list:
     """
     Фильтрует список словарей по значению ключа 'state'.
 
@@ -9,10 +9,10 @@ def filter_by_state(filter_state: list, state: str = "EXECUTED") -> list:
     Возвращается:
         Новый список словарей с указанным значением state
     """
-    return [item for item in filter_state if item.get("state") == state]
+    return [item for item in transaction_1 if item.get("state") == state]
 
 
-def sort_by_date(sort_date: list, descending: bool = True) -> list:
+def sort_by_date(transaction_2: list, descending: bool = True) -> list:
     """
     Сортирует список словарей по дате (ключ 'date').
 
@@ -24,4 +24,4 @@ def sort_by_date(sort_date: list, descending: bool = True) -> list:
     Возвращается:
         Новый список, отсортированный по дате
     """
-    return sorted(sort_date, key=lambda x: x.get("date", ""), reverse=descending)
+    return sorted(transaction_2, key=lambda x: x.get("date", ""), reverse=descending)
