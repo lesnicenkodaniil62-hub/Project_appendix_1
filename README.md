@@ -12,8 +12,21 @@ git clone https://github.com/lesnicenkodaniil62-hub/Project_appendix_1
 ```
 2. Установите зависимости:
 ```
-poetry init
+На данный момент сторонних библиотек нет. 
+Но есть линтор, статический анализатор типа и форматеры кода.
+Именно они входят в зависимость данного проекта их можно найти в файле pyproject.toml.
+Но если  их у вас нет, то можно то их можно установитьс помощью данных ниже команд
+1. flake8 
+poetry add --group lint flake8
+2. mypy
+poetry add --group lint mypy
+3. black
+poetry add --group lint black
+4. isort
+poetry add --group lint isort
 ```
+Более подробные настройки линтеров можно узнать тут [документации](docs/README.md).
+
 ## Использование:
 
 1. Откройте приложение в вашем веб-браузере.
