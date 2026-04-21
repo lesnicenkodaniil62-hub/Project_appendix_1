@@ -1,6 +1,6 @@
 def get_mask_card_number(card_number: str) -> str:
     """Маскирует номер банковской карты."""
-    if not card_number.isdigit() or len(card_number) > 16:
+    if not card_number or not card_number.isdigit() or len(card_number) != 16:
         return "Некорректный номер карты"
 
     first_six = card_number[:6]
