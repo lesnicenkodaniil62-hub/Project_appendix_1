@@ -12,9 +12,10 @@ git clone https://github.com/lesnicenkodaniil62-hub/Project_appendix_1
 ```
 2. Установите зависимости:
 ```
-На данный момент сторонних библиотек в проекте нет.
+На данный момент появилась библиотека requests и python-dotenv также в пректе теперь участвует библиотека os, dadataim, json.
 Однако используются линтер, статический анализатор и форматер кода. 
 Поскольку проект прошёл тестирование через pytest, у него есть зависимости — именно эти инструменты. Они указаны в файле pyproject.toml. 
+А также теперьв тестирование участвует Mock и patch. На даный момет всё.
 Если у вас они отсутствуют, вы можете установить их с помощью команд, приведённых ниже.
 1. flake8 
 poetry add --group lint flake8
@@ -24,7 +25,11 @@ poetry add --group lint mypy
 poetry add --group lint black
 4. isort
 poetry add --group lint isort
-5.pytest
+5. requests
+poetry add requests
+6. python-dotenv
+poetry add python-dotenv
+7. pytest
 poetry add --group dev pytest
 Code coverage в
 Code coverage в библиотеку pytest
