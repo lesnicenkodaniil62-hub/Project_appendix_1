@@ -34,7 +34,7 @@ def get_mask_card_number(card_number: str) -> str:
     # Формат: XXXX XX** **** XXXX (пробел только после первых 4 цифр)
     result: str = f"{card_number[:4]} {card_number[4:6]}** **** {card_number[-4:]}"
 
-    # 🟢 INFO: успешное выполнение
+    # INFO: успешное выполнение
     masks_logger.info("Карта успешно замаскирована: %s", result)
     return result
 
