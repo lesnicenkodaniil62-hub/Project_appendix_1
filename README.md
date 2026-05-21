@@ -13,7 +13,8 @@ git clone https://github.com/lesnicenkodaniil62-hub/Project_appendix_1
 2. Установите зависимости:
 ```
 На данный момент появилась библиотека requests и python-dotenv также в пректе теперь участвует библиотека os, dadataim, json, logging.
-Однако используются линтер, статический анализатор и форматер кода. 
+А такж используются линтер, статический анализатор и форматер кода. 
+Для обработки и анализа данных в формате Excel, CSV я импртирокал библиотеку pandas.
 Поскольку проект прошёл тестирование через pytest, у него есть зависимости — именно эти инструменты. Они указаны в файле pyproject.toml. 
 А также теперьв тестирование участвует Mock и patch. На даный момет всё.
 Если у вас они отсутствуют, вы можете установить их с помощью команд, приведённых ниже.
@@ -27,9 +28,11 @@ poetry add --group lint black
 poetry add --group lint isort
 5. requests
 poetry add requests
-6. python-dotenv
+6. pandas
+poetry add pandas
+7. python-dotenv
 poetry add python-dotenv
-7. pytest
+8. pytest
 poetry add --group dev pytest
 Code coverage в
 Code coverage в библиотеку pytest
