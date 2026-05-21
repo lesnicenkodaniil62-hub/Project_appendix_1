@@ -1,8 +1,8 @@
-import pytest
-from typing import List, Dict, Any
-from unittest.mock import patch, mock_open
+from typing import Any, Dict, List
+from unittest.mock import mock_open, patch
 
 import pandas as pd
+import pytest
 
 from src.transaction_reader import read_transactions_from_csv, read_transactions_from_excel
 
@@ -17,19 +17,31 @@ def test_read_transactions_from_csv() -> None:
     # Имитируем результат работы csv.DictReader после парсинга реального CSV
     expected: List[Dict[str, Any]] = [
         {
-            "id": "1", "state": "EXECUTED", "date": "2023-01-01T10:00:00Z",
-            "amount": "100", "currency_name": "USD", "currency_code": "USD",
-            "from": "", "to": "", "description": "Тестовый перевод"
+            "id": "1",
+            "state": "EXECUTED",
+            "date": "2023-01-01T10:00:00Z",
+            "amount": "100",
+            "currency_name": "USD",
+            "currency_code": "USD",
+            "from": "",
+            "to": "",
+            "description": "Тестовый перевод",
         },
         {
-            "id": "2", "state": "CANCELED", "date": "2023-01-02T12:00:00Z",
-            "amount": "200", "currency_name": "EUR", "currency_code": "EUR",
-            "from": "", "to": "", "description": "Отмена операции"
-        }
+            "id": "2",
+            "state": "CANCELED",
+            "date": "2023-01-02T12:00:00Z",
+            "amount": "200",
+            "currency_name": "EUR",
+            "currency_code": "EUR",
+            "from": "",
+            "to": "",
+            "description": "Отмена операции",
+        },
     ]
 
     # 2. Изоляция файлового ввода-вывода
-    # patch подменяет встроенную open() на mock_open(). 
+    # patch подменяет встроенную open() на mock_open().
     # create=True требуется, так как open не является атрибутом модуля src, а встроенной функцией.
     with patch("src.transaction_reader.open", mock_open(), create=True):
         # 3. Изоляция CSV-парсера
@@ -55,15 +67,27 @@ def test_read_transactions_from_excel() -> None:
     # 1. Подготовка эталонных данных
     expected: List[Dict[str, Any]] = [
         {
-            "id": "1", "state": "EXECUTED", "date": "2023-01-01T10:00:00Z",
-            "amount": "100", "currency_name": "USD", "currency_code": "USD",
-            "from": "", "to": "", "description": "Тестовый перевод"
+            "id": "1",
+            "state": "EXECUTED",
+            "date": "2023-01-01T10:00:00Z",
+            "amount": "100",
+            "currency_name": "USD",
+            "currency_code": "USD",
+            "from": "",
+            "to": "",
+            "description": "Тестовый перевод",
         },
         {
-            "id": "2", "state": "CANCELED", "date": "2023-01-02T12:00:00Z",
-            "amount": "200", "currency_name": "EUR", "currency_code": "EUR",
-            "from": "", "to": "", "description": "Отмена операции"
-        }
+            "id": "2",
+            "state": "CANCELED",
+            "date": "2023-01-02T12:00:00Z",
+            "amount": "200",
+            "currency_name": "EUR",
+            "currency_code": "EUR",
+            "from": "",
+            "to": "",
+            "description": "Отмена операции",
+        },
     ]
 
     # Создаём pandas DataFrame из тестовых данных. Он будет имитировать результат чтения .xlsx
