@@ -6,6 +6,7 @@ from src.transaction_reader import read_transactions_from_csv, read_transactions
 
 # from src.processing import filter_by_state, sort_by_date
 
+
 def main() -> None:
     csv_path = Path("data/transactions.csv")
     excel_path = Path("data/transactions_excel.xlsx")
@@ -40,6 +41,7 @@ def main() -> None:
 
     print("Демонстрация завершена.")
 
+
 # Примеры использования и проверка
 if __name__ == "__main__":
     # Указываем путь к файлу с операциями
@@ -51,8 +53,8 @@ if __name__ == "__main__":
     # если хотите проверить вывод через принт закомментируйте лишние и проверяйте нужное
 
     # Выводим результат
-    print(mask_account_card(input("Введите номер")))        # здесь мы проверяем введите и выведение замаскированного номер.
-    print(get_date(input("Введите дату")))                  # здесь мы проверяем введите и выведение даты.
-    print(f"Найдено транзакций: {len(transactions)}")       # здесь мы проверяем считаем количество транзакций.
-    print(transactions)                                     # здесь мы проверяем чтение формата json.
-    main()                                                  # здесь мы проверяем чтение формата csv и xlsx.
+    print(mask_account_card(input("Введите номер")))  # здесь мы проверяем введите и выведение замаскированного номер.
+    print(get_date(input("Введите дату")))  # здесь мы проверяем введите и выведение даты.
+    print(f"Найдено транзакций: {len(transactions)}")  # здесь мы проверяем считаем количество транзакций.
+    print(transactions)  # здесь мы проверяем чтение формата json.
+    main()  # здесь мы проверяем чтение формата csv и xlsx.
